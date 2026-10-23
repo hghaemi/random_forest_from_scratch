@@ -48,41 +48,6 @@ pip install -r requirements.txt
 jupyter notebook random_forest.ipynb
 ```
 
-## 💻 Usage
-
-### Basic Usage
-
-```python
-from DecisionTree import DecisionTree
-from sklearn.datasets import load_breast_cancer
-from sklearn.model_selection import train_test_split
-
-# Load and prepare data
-data = load_breast_cancer()
-X_train, X_test, y_train, y_test = train_test_split(
-    data.data, data.target, test_size=0.2, random_state=56
-)
-
-# Create and train Random Forest
-rf = RandomForest(n_trees=100, max_depth=10, min_sample_split=2)
-rf.fit(X_train, y_train)
-
-# Make predictions
-predictions = rf.predict(X_test)
-```
-
-### Hyperparameter Configuration
-
-```python
-# Customize the Random Forest
-rf = RandomForest(
-    n_trees=50,           # Number of trees in the forest
-    max_depth=15,         # Maximum depth of each tree
-    min_sample_split=5,   # Minimum samples required to split a node
-    n_feature=10          # Number of features to consider at each split
-)
-```
-
 ## 🧮 Algorithm Details
 
 ### Decision Tree
@@ -161,4 +126,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Feel free to contribute by:
 - Adding support for regression tasks
 - Implementing additional splitting criteria (Gini impurity)
-- Adding cross
